@@ -1,0 +1,26 @@
+# Employee Management System
+
+def employee(name, *skills, **details):
+	print("=" * 20)
+	print("Employee Information")
+	print("=" * 20)
+	print("Name : ", name)
+	print("\nSkills : ")
+	for skill in skills:
+		print("_", skill)
+
+	print("\nDetails : ")
+	for k, v in details.items():
+		print(f"{k} : {v}")
+
+employee(
+	"Mridul",
+	"Java",
+	"c++",
+	"JS",
+	"HTML",
+	age=28,
+	salary=2000,
+	city="London",
+	experience="5 Years"
+)
