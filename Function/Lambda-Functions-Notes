@@ -1,0 +1,65 @@
+=============================
+| Lambda Function in Python |
+=============================
+Lambda Function is a small anonymous function in Python that can have any number of arguments, but only one expression. 
+It is created using the lambda keyword and returns the result of the expression automatically.
+
+A lambda function is an anonymous (nameless) function used for writing short, one-line functions.
+
+Syntax
+  lambda arguments: expression
+-------------------------------------------
+Arguments
+     │
+     ▼
+Expression Execute
+     │
+     ▼
+Result Automatically Return
+-------------------------------------------
+
+square = lambda x: x * x
+print(square(5))
+O/P : 25
+
+add = lambda a, b: a + b
+print(add(10, 20))
+O/P : 30
+
+upper = lambda name: name.upper()
+print(upper("hello"))
+O/P : HELLO
+
+is_even = lambda n: n % 2 == 0
+
+print(is_even(8))
+print(is_even(5))
+O/P True
+    False
+
+
+=============================
+| Lambda vs Normal Function |
+=============================
+def square(x):
+    return x * x
+print(square(5))   O/P : 5
+_____________________________
+
+square = lambda x: x * x
+print(square(5))    O/P : 5
+_____________________________
+
+greater = lambda a, b: a if a > b else b
+print(greater(15, 30))
+O/P : 30
+
+total = lambda a, b, c: a + b + c
+print(total(10, 20, 30))
+O/P : 60
+
+
+
+
+
+
