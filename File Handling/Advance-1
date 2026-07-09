@@ -1,0 +1,191 @@
+=======================
+| Topic: File Pointer |
+=======================
+-> A file pointer is a cursor that keeps track of the current position inside a file. Every read or write operation starts from the current position of the file pointer.
+-> A file pointer indicates where the next read or write operation will occur in a file.
+Read
+↓
+Pointer Move
+↓
+Next Read Starts Here
+
+----------------------------
+| Pointer Movement Example |
+----------------------------
+
+File
+↓
+Python
+↓
+Initial
+↓
+👇
+Python
+↓
+After
+↓
+read(1)
+↓
+P👇ython
+↓
+After
+↓
+read(2)
+↓
+Pyt👇hon
+↓
+After
+↓
+read()
+↓
+Python👇
+
+===========
+| Summary |
+===========
+______________________________________________________________________
+| Concept          | Meaning                                         |
+| ---------------- | ----------------------------------------------- |
+| File Pointer     | Current position inside the file                |
+| Initial Position | 0 (Start of file)                               |
+| `read()`         | Reads from current pointer to end               |
+| `read(n)`        | Reads `n` characters from current pointer       |
+| `readline()`     | Reads one line from current pointer             |
+| After Reading    | Pointer automatically moves                     |
+| Read Again       | Use `seek(0)` to move pointer back to the start |
+______________________________________________________________________
+
+
+==========
+| tell() |
+==========
+-> method returns the current position of the file pointer in bytes.
+-> tell() tells the current location of the file pointer.
+
+student.txt
+--------------
+Python
+Java
+C++
+Character positions (ASCII text):
+----------------------------------
+P y t h o n \n J a v a \n C + +
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+
+file = open("student.txt", "r")
+print(file.tell())
+
+O/P : 0
+
+file = open("student.txt", "r")
+file.read(3)
+print(file.tell())
+
+O/P : 3
+
+file = open("student.txt", "r")        # Python 
+file.readline()                        # Python = 6 letters + newline (\n) = 7 bytes  => Python -> Java
+print(file.tell())                     # O/P : 7
+
+
+=====================
+| Summary of tell() |
+=====================
+__________________________________
+| Code        | Pointer Position |
+| ----------- | ---------------- |
+| Just opened | 0                |
+| `read(2)`   | 2                |
+| `read(5)`   | 5                |
+| `read()`    | End of file      |
+__________________________________
+
+==========
+| seek() |
+==========
+-> The seek() method changes the current position of the file pointer to a specified location.
+-> seek() moves the file pointer to any position inside the file.
+
+file = open("student.txt", "r")
+file.seek(7)
+print(file.read())
+
+I/P : Python -> Java -> C++
+O/P : Java -> c++
+
+---------------------------------------------
+file = open("student.txt", "r")
+print(file.tell())
+file.read(4)
+print(file.tell())
+file.seek(1)
+print(file.tell())
+print(file.read())
+------------------------------------------
+Execution
+
+Initially
+👇
+Python
+
+tell()
+0
+
+read(4)
+Pyth
+
+Pointer
+Pyth👇on
+
+tell()
+4
+
+seek(1)
+
+Pointer
+P👇ython
+
+tell()
+1
+
+read()
+
+Output
+ython
+Java
+C++
+
+
+Q1. Difference between tell() and seek()?
+_____________________________________________________________________
+| `tell()`                         | `seek()`                        |
+| -------------------------------- | ------------------------------- |
+| Returns current pointer position | Moves pointer to a new position |
+| Does not change pointer          | Changes pointer                 |
+| Returns integer                  | Returns `None`                  |
+_____________________________________________________________________
+
+Q2. Why use seek(0)?
+Answer: After reading a file once, the pointer reaches the end. seek(0) moves it back to the beginning so the file can be read again.
+
+Q3. Does seek() return data?
+Answer: No. It only changes the pointer position.
+
+===========
+| Summary |
+===========
+____________________________________________________
+| Method      | Purpose                  | Returns |
+| ----------- | ------------------------ | ------- |
+| `tell()`    | Current pointer position | Integer |
+| `seek(pos)` | Move pointer to `pos`    | `None`  |
+____________________________________________________
+
+
+
+
+
+
+
+
+
