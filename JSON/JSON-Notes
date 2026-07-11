@@ -101,24 +101,25 @@ O/P : {"name": "Mridul", "age": 20}
 O/P : {'name': 'Mridul', 'age': 20}
       <class 'dict'>
 
+____________________________________________________
+| Function       | Work                            |
+| -------------- | ------------------------------- |
+| `json.dump()`  | Python object → JSON **file**   |
+| `json.dumps()` | Python object → JSON **string** |
+| `json.load()`  | JSON **file** → Python object   |
+| `json.loads()` | JSON **string** → Python object |
+____________________________________________________
 
-dump() vs dumps()
-_____________________________________________________
-| dump()                  | dumps()                 |
-| ----------------------- | ----------------------- |
-| File me write karta hai | String return karta hai |
-| File object chahiye     | File ki zarurat nahi    |
-| json.dump(data, file)   | json.dumps(data)        |
-_____________________________________________________
+Easy Trick
+----------------
+1) load = Read
+2) dump = Write
+3) s = String
 
-load() vs loads()
-_____________________________________________________
-| load()                 | loads()                  |
-| ---------------------- | ------------------------ |
-| File se read karta hai | String se read karta hai |
-| File object chahiye    | JSON string chahiye      |
-| json.load(file)        | json.loads(string)       |
-_____________________________________________________
+load → File se read
+loads → String se read
+dump → File me write
+dumps → String me write (return karta hai)
 
 -------
 Example
