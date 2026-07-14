@@ -49,3 +49,310 @@ Module 9: Project
 👉 Library Management System
 👉 Banking System (OOP Version)
 
+
+Procedural Programming (Variable, function both are seprated)
+-----------------------
+    name = "Mridul"
+    balance = 1000
+    
+    def deposit():
+        ...
+
+================
+| What is OOP? |
+================
+👉 Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects, where each object 
+    contains data (attributes) and behavior (methods).
+👉 Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects. 
+    Each object contains data (attributes) and behavior (methods), making programs modular, reusable, and easier to maintain.
+    
+    Bank Account
+
+    Name
+    Phone
+    Balance
+    
+    Deposit()
+    Withdraw()
+    Transfer()
+
+👉 Advantages of OOP
+   1) Code Reusability
+   2) Easy Maintenance
+   3) Better Security
+   4) Easy Testing
+   5) Modular Code
+   6) Real-world Modeling
+   7) Less Code Duplication
+
+👉 Class = Blueprint
+👉 Object = Real Instance
+👉 Attribute = Variable inside Class
+👉 Method = Function inside Class
+
+
+====================
+| Class and Object |
+====================
+👉 A Class is a blueprint or template used to create objects. 
+   It defines the attributes (data) and methods (behavior) that objects will have.
+    
+    class Student:
+        pass
+
+======================
+| What is an Object? |
+======================
+👉 An Object is an instance of a class. It is a real entity created from a class that contains actual 
+   data and can perform actions.
+
+    class Student:
+        pass
+    
+    s1 = Student()
+
+Student() -> Object
+s1 -> Storing Variable
+
+=======================================
+| Difference Between Class and Object |
+=======================================
+_______________________________________________________________________
+| Class                             | Object                          |
+| --------------------------------- | ------------------------------- |
+| Blueprint                         | Real Instance                   |
+| Logical Entity                    | Physical/Runtime Entity         |
+| Template                          | Actual Data                     |
+| One class can create many objects | Every object belongs to a class |
+_______________________________________________________________________
+
+
+============================
+| Constructor (__init__()) | -> Constructor Runs Automatically
+============================
+👉 A constructor is a special method that is automatically called when an object of a class is created. 
+   It is mainly used to initialize the object's data (attributes).
+
+     class ClassName:
+         def __init__(self):
+          # Initialization
+
+    class Student:
+    
+        def __init__(self):
+            print("Constructor Called")
+    
+    s1 = Student()
+
+O/P : Constructor Called
+
+-------------------------
+
+    class Student:
+        def __init__(self):
+            self.name = "Mridul"
+            self.age = 20    
+    s1 = Student()
+    
+    print(s1.name)
+    print(s1.age)
+
+O/P : Mridul
+      20
+
+----------------------------
+Constructor vs Normal Method
+----------------------------
+
+    class Demo:
+    
+        def __init__(self):     # Automatically call
+            print("Constructor")
+    
+        def show(self):         # manually call
+            print("Normal Method")
+    
+    d = Demo() # 
+    d.show()  
+
+O/P : Constructor
+      Normal Method
+
+
+================
+| self Keyword |
+================
+
+👉 self is a reference to the current object of a class. It is used to access the attributes and methods of that object.
+
+✅ def __init__(abc):  
+✅ def __init__(myobject):
+✅ But Python community uses self keyword. def __init__(self):
+
+    class Student:
+        def __init__(self):             -> def __init__(s1)
+            self.name = "Mridul"        -> s1.name
+    
+    s1 = Student()
+    print(s1.name)                      -> print(self.name)
+
+O/P : Mridul
+
+------------------------------------------------------------------
+
+class Student:
+    def show(self):
+        print("Name :", self.name)
+
+    def __init__(self):
+        self.name = "Mridul"
+
+s1 = Student()
+s1.show()
+
+O/P : Mridul
+
+👉 self current object ka reference hai.
+👉 self keyword nahi hai.
+👉 self ke through object ke variables aur methods access hote hain.
+👉 Har object ke liye self alag hota hai.
+👉 Python automatically current object ko self me pass karta hai.
+
+=============================
+| Parameterized Constructor |
+=============================
+👉 A parameterized constructor is a constructor that accepts parameters to initialize an object with different values.
+
+Without Parameterized Constructor
+---------------------------------
+    class Student:
+    
+        def __init__(self):
+            self.name = "Mridul"
+    
+    s1 = Student()
+    s2 = Student()
+    
+    print(s1.name) # All object same
+    print(s2.name) # All object same
+
+O/P : Mridul  
+      Mridul
+
+With Parameterized Constructor
+------------------------------
+    class Student:
+    
+        def __init__(self, name):
+            self.name = name
+    
+    s1 = Student("Mridul")
+    s2 = Student("Rahul")
+    
+    print(s1.name)   # All object have own value
+    print(s2.name)   # All object have own value
+
+O/P : Mridul
+      Rahul
+
+Multiple Parameters
+-------------------
+    class Student:
+        def __init__(self, name, age, course):    
+            self.name = name    
+            self.age = age    
+            self.course = course
+    s1 = Student("Mridul", 21, "Python")
+    
+    print(s1.name)
+    print(s1.age)
+    print(s1.course)
+
+O/P : Mridul
+      21
+      Python
+
+=======================================================================
+| Difference Between Normal Constructor and Parameterized Constructor |
+=======================================================================
+___________________________________________________________________________________
+| Normal Constructor                          | Parameterized Constructor          |
+| ------------------------------------------- | ---------------------------------- |
+| No parameters (except `self`)               | Accepts one or more parameters     |
+| Same values for every object (if hardcoded) | Different values for each object   |
+| Less flexible                               | More flexible                      |
+| Used for default initialization             | Used for customized initialization |
+------------------------------------------------------------------------------------
+
+=========================================
+| Instance Variables vs Class Variables |
+=========================================
+
+👉 What is a instance Variable?
+   An instance variable is a variable that belongs to a specific object (instance).Each object has its own copy of the 
+   instance variable.
+
+👉 What is a Class Variable?
+    A class variable is a variable that belongs to the class itself. It is shared by all objects of that class.
+
+Instance Variable
+-----------------
+    class Student:
+        def __init__(self, name, age):
+            self.name = name          
+            self.age = age    
+
+s1 = Student("Mridul", 21)
+s2 = Student("Rahul", 22)
+
+self.name   # Instance Variable
+self.age    # Instance Variable
+
+Class Variable
+--------------
+    class Student:
+        college = "ABC College"   # college -> Class Variable
+        def __init__(self, name):
+            self.name = name
+s1 = Student("Mridul")
+print(s1.college)
+
+O/P : ABC College
+
+👉 Accessing Instance Variables (Through object)
+    print(a1.name)
+    print(a2.balance)
+
+👉 Accessing Class Variable
+    print(a1.bank_name)
+    print(BankAccount.bank_name) (Recommended)
+
+👉 Modifying Instance Variable
+   a1.balance = 20000   # only a1 will changed not other variables
+
+👉 Modifying Class Variable
+   BankAccount.bank_name = "Punjab National Bank"   # all ovariables will update
+
+===========================================================
+| Difference Between Instance Variable and Class Variable |
+===========================================================
+____________________________________________________________________________________
+| Instance Variable              | Class Variable                                  |
+| ------------------------------ | ----------------------------------------------- |
+| Belongs to an object           | Belongs to the class                            |
+| Created using `self`           | Created directly inside the class               |
+| Separate copy for every object | One shared copy                                 |
+| Values can be different        | Same for all objects                            |
+| Access using object            | Access using `ClassName.variable` (recommended) |
+------------------------------------------------------------------------------------
+
+
+==================
+| Methods in OOP |
+==================
+
+
+
+
+
+
