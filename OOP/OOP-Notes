@@ -1,0 +1,51 @@
+Module 1: Introduction to OOP 
+👉 What is Programming Paradigm?
+👉 Procedural Programming vs Object-Oriented Programming
+👉 What is OOP?
+👉 Advantages of OOP
+👉 Real-life Examples of OOP
+
+Module 2: Class and Object 
+👉 What is a Class?
+👉 What is an Object?
+👉 Creating Class
+👉 Creating Object
+👉 Multiple Objects
+
+Module 3: Constructor
+👉 __init__()
+👉 Default Constructor
+👉 Parameterized Constructor
+
+Module 4: self Keyword
+👉 What is self?
+👉 Why is self required?
+👉 How Python passes self
+
+Module 5: Attributes
+👉 Instance Variables
+👉 Class Variables
+👉 Local Variables
+
+Module 6: Methods
+👉 Instance Method
+👉 Class Method
+👉 Static Method
+
+Module 7: Pillars of OOP
+👉 Encapsulation
+👉 Inheritance
+👉 Polymorphism
+👉 Abstraction
+
+Module 8: Special (Magic/Dunder) Methods
+👉 __str__
+👉 __repr__
+👉 __len__
+👉 __add__
+
+Module 9: Project
+👉 Student Management System
+👉 Library Management System
+👉 Banking System (OOP Version)
+
