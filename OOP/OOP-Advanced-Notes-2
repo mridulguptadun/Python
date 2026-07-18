@@ -75,4 +75,55 @@ __________________________________________________
 | Lifetime        | Same         | Different     |
 --------------------------------------------------
 
+===============
+| Association |
+===============
+👉 Association is a relationship where two or more objects communicate with each other while remaining independent.
 
+  class Doctor:
+      def treat(self):
+          print("Treating Patient")
+  
+  class Patient:
+      def visit(self, doctor):
+          doctor.treat()
+  
+  d = Doctor()
+  p = Patient()
+  p.visit(d)
+
+O/P : Treating Patient
+
+Association Types
+------------------
+1) One-to-One               Person  --------  Passport
+2) One-to-Many              Teacher -> Students
+3) Many-to-One              Students -> School
+4) Many-to-Many             Students  <-> Courses
+
+====================
+| Difference Table |
+====================
+__________________________________________________________
+| Feature      | Association | Aggregation | Composition |
+| ------------ | ----------- | ----------- | ----------- |
+| Relationship | Uses        | Has-A       | Has-A       |
+| Ownership    | No          | Weak        | Strong      |
+| Dependency   | No          | Low         | High        |
+| Lifetime     | Independent | Independent | Dependent   |
+----------------------------------------------------------
+
+Important Interview Point
+--------------------------
+👉 Association is the most general relationship between classes.
+
+Association
+│
+├── Aggregation
+│
+└── Composition
+
+That means:
+👉 Every Composition is an Association.
+👉 Every Aggregation is an Association.
+👉 But every Association is not Composition or Aggregation.
