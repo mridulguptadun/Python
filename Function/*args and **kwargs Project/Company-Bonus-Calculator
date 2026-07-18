@@ -1,0 +1,90 @@
+⭐⭐⭐⭐⭐⭐Company Bonus Calculator ⭐⭐⭐⭐⭐⭐
+Question
+def company_bonus(company, bonus_percent, *employees, **salary):
+Rules
+  For every employee
+  Bonus = salary × bonus_percent / 100
+  Final Salary = salary + bonus
+  Print
+  Employee
+  Salary
+  Bonus
+  Final Salary
+  At last print
+  Total Bonus
+  Total Salary After Bonus
+========================================================================================
+
+def compy_bonus(company, bonus_percent, *employees, **salary):
+	print("=" * 30)
+	print("COMPANY BONUS REPORT")
+	print("=" * 30)
+
+	print("Company Name : ", company)
+	print("Bonus Percentage : ", bonus_percent)
+
+	print("-" * 20)
+	print("Employees")
+	print("-" * 20)
+
+	for emp in employees:
+		print(emp)
+
+	print("-" * 20)
+	print("Salary Report")
+	print("-" * 20)
+
+	print(f"{'Employee':<15}{'Salary':<12}{'Bonus':<12}{'Final Salary'}")
+	print("=" * 50)
+
+	total_salary = 0
+	total_bonus = 0
+	total_fianl_salary = 0
+
+	highest_salary = 0
+	highest_employee = ""
+
+	lowest_salary = None
+	lowest_employee = ""
+
+	for name, amount in salary.items():
+		bonus = amount * bonus_percent / 100
+		final_salary = bonus + amount
+
+		print(f"{name:<15}{amount:<12}{bonus:<12.2f}{final_salary:.2f}")
+
+		total_salary += amount
+		total_bonus += bonus
+		total_fianl_salary += final_salary
+
+		if amount > highest_salary:
+			highest_salary = amount
+			highest_employee = name
+
+		if lowest_salary is None or amount < lowest_salary:
+			lowest_salary = amount
+			lowest_employee = name
+	average_salary = total_salary / len(salary)
+
+	print("-" * 70)
+	print("Total Salary        :", total_salary)
+	print("Total Bonus         :", round(total_bonus, 2))
+	print("Total Final Salary  :", round(total_fianl_salary, 2))
+	print("Average Salary      :", round(average_salary, 2))
+	print("Highest Paid        :", highest_employee, "-", highest_salary)
+	print("Lowest Paid         :", lowest_employee, "-", lowest_salary)
+
+compy_bonus(
+    "TechSoft Solutions",
+    15,
+
+    "John",
+    "Emma",
+    "David",
+    "Sophia",
+
+    John=50000,
+    Emma=70000,
+    David=45000,
+    Sophia=90000
+)
