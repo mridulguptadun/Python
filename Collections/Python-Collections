@@ -1,3 +1,15 @@
+Python Collections
+│
+├── List
+├── Tuple
+├── Set
+├── Dictionary
+└── Comprehensions
+      ├── List Comprehension
+      ├── Dictionary Comprehension
+      ├── Set Comprehension
+      └── Generator Expression
+
 ======================
 | Python Collections |
 ======================
