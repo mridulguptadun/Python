@@ -255,3 +255,18 @@
     	print("armstrong")
     else:
     	print("not")
+
+👉 Neon Number  -> (9) -> 9 * 9 = 81 and 8 + 1 = 9
+
+	n = int(input("Enter Any No : "))
+	sq = n * n
+	temp = sq
+	s = 0
+	while temp > 0:
+		d = temp % 10
+		s += d
+		temp //= 10
+	if s == n:
+		print(n,"Is a Neon Number")
+	else:
+		print(n, "Not a Neon Number")
