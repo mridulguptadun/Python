@@ -1,1 +1,60 @@
+👉 Comprehension is a concise and readable way to create a new collection (list, dictionary, set, or generator) from an 
+    existing iterable using a single line of code.
 
+👉 Comprehensions provide a shorter, cleaner, and more Pythonic way to create collections.
+👉 Less code
+👉 Easy to read
+👉 Faster than many traditional loops
+👉 More Pythonic style
+👉 Reduces unnecessary variables
+
+--------------------------
+| Types of Comprehension |
+--------------------------
+_______________________________________________
+| Type                     | Output           |
+| ------------------------ | ---------------- |
+| List Comprehension       | List             |
+| Dictionary Comprehension | Dictionary       |
+| Set Comprehension        | Set              |
+| Generator Expression     | Generator Object |
+-----------------------------------------------
+
+  [expression for item in iterable]
+  
+  [expression for item in iterable if condition]
+
+  Iterable
+      ↓
+  Take one item
+      ↓
+  Check condition (if present)
+      ↓
+  Apply expression
+      ↓
+  Store result
+      ↓
+  Repeat
+
+
+  numbers = [1,2,3,4,5]
+  result = [i+10 for i in numbers]
+  print(result)
+
+O/P : [11,12,13,14,15]
+
+------------------------------------------------
+
+  numbers = [1,2,3,4,5,6,7,8]
+  even = [i for i in numbers if i % 2 == 0]
+  print(even)
+
+O/P : [2,4,6,8]
+
+------------------------------------------------
+
+  numbers = [1,2,3,4,5,6]
+  square = [i*i for i in numbers if i%2==0]
+  print(square)
+
+O/P : [4,16,36]
