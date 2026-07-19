@@ -244,3 +244,39 @@ Name: Mridul, Marks: 95
 
 Output
 b'Python'
+
+-----------------
+| Summary Table |
+-----------------
+__________________________________________________
+| Method       | Purpose                         |
+| ------------ | ------------------------------- |
+| upper()      | Uppercase                       |
+| lower()      | Lowercase                       |
+| title()      | Title Case                      |
+| capitalize() | First letter uppercase          |
+| swapcase()   | Reverse case                    |
+| strip()      | Remove spaces                   |
+| replace()    | Replace text                    |
+| find()       | Find index                      |
+| index()      | Find index (error if not found) |
+| count()      | Count substring                 |
+| split()      | Convert to list                 |
+| join()       | Join strings                    |
+| startswith() | Starts with                     |
+| endswith()   | Ends with                       |
+| isalpha()    | Letters only                    |
+| isdigit()    | Digits only                     |
+| isalnum()    | Letters and digits              |
+| islower()    | Lowercase check                 |
+| isupper()    | Uppercase check                 |
+| isspace()    | Whitespace check                |
+| center()     | Center align                    |
+| ljust()      | Left align                      |
+| rjust()      | Right align                     |
+| zfill()      | Leading zeros                   |
+| format()     | String formatting               |
+| encode()     | Convert to bytes                |
+--------------------------------------------------
+
+
