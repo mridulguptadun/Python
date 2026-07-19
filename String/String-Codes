@@ -1,0 +1,219 @@
+👉 Reverse String -> Reversing a string means arranging its characters from last to first.
+👉 Palindrome -> A palindrome is a string that reads the same from both directions.
+👉 Anagram -> Two strings are anagrams if they have the same characters with the same frequency.
+👉 Character Frequency -> Character frequency means counting how many times each character appears in a string.
+👉 Duplicate Character -> A duplicate character is a character that appears more than once in a string.
+
+
+1. Reverse a String
+
+    text = input("Enter String: ")
+    reverse = text[::-1]
+    print("Reverse String:", reverse)
+
+Output
+Enter String: Python
+Reverse String: nohtyP
+
+2. Reverse String Without Slicing
+
+    text = input("Enter String: ")
+    reverse = ""
+    for ch in text:
+        reverse = ch + reverse
+    print(reverse)
+
+3. Check Palindrome
+
+    text = input("Enter String: ")
+    if text == text[::-1]:
+        print("Palindrome")
+    else:
+        print("Not Palindrome")
+
+4. Count Vowels
+
+    text = input("Enter String: ")
+    count = 0
+    for ch in text.lower():
+        if ch in "aeiou":
+            count += 1
+    print("Vowels =", count)
+
+5. Count Consonants
+
+    text = input("Enter String: ")
+    count = 0
+    for ch in text.lower():
+        if ch.isalpha() and ch not in "aeiou":
+            count += 1
+    print(count)
+
+6. Count Uppercase and Lowercase
+
+    text = input("Enter String: ")
+    upper = 0
+    lower = 0
+    for ch in text:
+        if ch.isupper():
+            upper += 1
+        elif ch.islower():
+            lower += 1
+    print("Upper =", upper)
+    print("Lower =", lower)
+
+7. Count Digits
+
+    text = input("Enter String: ")
+    count = 0
+    for ch in text:
+        if ch.isdigit():
+            count += 1
+    print(count)
+
+8. Count Spaces
+
+    text = input("Enter String: ")
+    count = 0
+    for ch in text:
+        if ch == " ":
+            count += 1
+    print(count)
+
+9. Count Words
+
+    text = input("Enter Sentence: ")
+    words = text.split()
+    print("Words =", len(words))
+
+10. Remove Spaces
+
+    text = input("Enter String: ")
+    print(text.replace(" ", ""))
+
+11. Count a Particular Character
+
+    text = input("Enter String: ")
+    ch = input("Character: ")
+    print(text.count(ch))
+
+12. Find Duplicate Characters
+
+    text = input("Enter String: ")
+    visited = ""
+    for ch in text:
+        if ch not in visited:
+            if text.count(ch) > 1:
+                print(ch)
+            visited += ch
+
+13. Character Frequency
+
+    text = input("Enter String: ")
+    visited = ""
+    for ch in text:
+        if ch not in visited:
+            print(ch, "=", text.count(ch))
+            visited += ch
+
+14. Find First Occurrence
+
+    text = input("Enter String: ")
+    ch = input("Character: ")
+    print(text.find(ch))
+
+15. Replace Character
+
+    text = input("Enter String: ")
+    old = input("Old Character: ")
+    new = input("New Character: ")
+    print(text.replace(old, new))
+
+16. Remove Duplicate Characters
+
+    text = input("Enter String: ")
+    result = ""
+    for ch in text:
+        if ch not in result:
+            result += ch
+    print(result)
+
+17. Check Anagram 
+
+  listen
+  silent
+  
+  evil
+  vile
+
+    s1 = input("First: ")
+    s2 = input("Second: ")
+    
+    if sorted(s1) == sorted(s2):
+        print("Anagram")
+    else:
+        print("Not Anagram")
+
+18. Largest Word
+
+    text = input("Sentence: ")
+    words = text.split()
+    largest = ""
+    for word in words:
+        if len(word) > len(largest):
+            largest = word
+    print(largest)
+
+19. Smallest Word
+
+    text = input("Sentence: ")
+    words = text.split()
+    smallest = words[0]
+    for word in words:
+        if len(word) < len(smallest):
+            smallest = word
+    print(smallest)
+
+20. Toggle Case
+
+    text = input("Enter String: ")
+    print(text.swapcase())
+
+21. Check String Contains Only Digits
+
+    text = input()
+    if text.isdigit():
+        print("Digits Only")
+    else:
+        print("Not Digits")
+
+22. Check String Contains Only Alphabets
+
+    text = input()
+    if text.isalpha():
+        print("Alphabet")
+    else:
+        print("Not Alphabet")
+
+23. Count Special Characters
+
+    text = input("Enter String: ")
+    count = 0
+    for ch in text:
+        if not ch.isalnum() and ch != " ":
+            count += 1
+    print("Special Characters =", count)
+
+24. Reverse Every Word
+
+    text = input("Sentence: ")
+    words = text.split()
+    for word in words:
+        print(word[::-1], end=" ")
+
+25. Print Characters Line by Line
+
+    text = input("Enter String: ")
+    for ch in text:
+        print(ch)
+
