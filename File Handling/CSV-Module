@@ -1,0 +1,124 @@
+==============
+| CSV Module |
+==============
+👉 CSV (Comma-Separated Values) is a file format used to store tabular data (rows and columns). 
+   The csv module in Python provides functions to read from and write to CSV files easily.
+
+import csv
+
+with open("students.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+O/P : ['Roll', 'Name', 'Marks']
+      ['101', 'Amit', '85']
+      ['102', 'Rahul', '90']
+      ['103', 'Priya', '95']
+
+--------------------------------
+| Main Functions of CSV Module |
+--------------------------------
+___________________________________________________
+| Function           | Purpose                    |
+| ------------------ | -------------------------- |
+| `csv.reader()`     | Reads CSV file             |
+| `csv.writer()`     | Writes data to CSV file    |
+| `csv.DictReader()` | Reads CSV as dictionaries  |
+| `csv.DictWriter()` | Writes dictionaries to CSV |
+---------------------------------------------------
+
+👉 csv.reader() -> csv.reader() reads data from a CSV file and returns each row as a list.
+
+  import csv
+  with open("students.csv", "r") as file:
+      reader = csv.reader(file)
+      for row in reader:
+          print(row)
+
+👉 csv.writer() -> csv.writer() writes data into a CSV file row by row.
+
+  import csv
+  with open("students.csv", "w", newline="") as file:
+      writer = csv.writer(file)
+      writer.writerow(["Roll", "Name", "Marks"])
+      writer.writerow([101, "Amit", 85])
+      writer.writerow([102, "Rahul", 90])
+
+👉 writer.writerow() -> Writes one row.
+
+  writer.writerow([101, "Amit", 85])
+
+👉 writer.writerows() -> Writes multiple rows.
+
+  import csv
+  data = [
+      ["Roll", "Name", "Marks"],
+      [101, "Amit", 85],
+      [102, "Rahul", 90],
+      [103, "Priya", 95]
+  ]
+  with open("students.csv", "w", newline="") as file:
+      writer = csv.writer(file)
+      writer.writerows(data)
+
+👉 csv.DictReader() -> DictReader() reads each row as a dictionary where the keys are the column names.
+
+  import csv
+  with open("students.csv", "r") as file:
+      reader = csv.DictReader(file)
+      for row in reader:
+          print(row)
+
+👉 csv.DictWriter() -> DictWriter() writes dictionary data into a CSV file.
+
+  import csv  
+  with open("students.csv", "w", newline="") as file:
+      fields = ["Roll", "Name", "Marks"]
+      writer = csv.DictWriter(file, fieldnames=fields)
+      writer.writeheader()
+      writer.writerow({
+          "Roll": 101,
+          "Name": "Amit",
+          "Marks": 85
+      })
+  
+      writer.writerow({
+          "Roll": 102,
+          "Name": "Rahul",
+          "Marks": 90
+      })
+
+👉 newline="" -> The newline="" argument prevents extra blank lines when writing CSV files (especially on Windows).
+             
+    with open("students.csv", "w", newline="") as file:
+
+----------------------
+| Common CSV Methods |
+----------------------
+_______________________________________________
+| Method               | Description          |
+| -------------------- | -------------------- |
+| `csv.reader()`       | Read CSV             |
+| `csv.writer()`       | Write CSV            |
+| `writer.writerow()`  | Write one row        |
+| `writer.writerows()` | Write multiple rows  |
+| `csv.DictReader()`   | Read as dictionary   |
+| `csv.DictWriter()`   | Write dictionaries   |
+| `writeheader()`      | Write column headers |
+-----------------------------------------------
+
+Advantages
+-----------
+👉 Easy to store tabular data.
+👉 Supported by Excel and Google Sheets.
+👉 Easy to read and write.
+👉 Lightweight file format.
+👉 Good for data exchange.
+
+Disadvantages
+-------------
+👉 Stores only plain text.
+👉 No data types (everything is read as strings).
+👉 Not suitable for complex or relational data.
+
