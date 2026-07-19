@@ -290,3 +290,141 @@ _______________________________________________
 | `list[:-1]`  | All except last              |
 | `list[::-2]` | Reverse every second element |
 -----------------------------------------------
+
+================
+| Nested Lists |
+================
+👉 A Nested List is a list that contains one or more lists as its elements.
+👉 A list can contain another list.
+👉 Used to represent tables, matrices, and grouped data.
+👉 Supports multi-level indexing.
+👉 Can be traversed using nested loops.
+👉 Each inner list can have the same or different number of elements.
+
+    students = [
+        ["Rahul", 18],
+        ["Aman", 19],
+        ["Priya", 20]
+    ]
+    print(students)
+
+O/P : [['Rahul', 18], ['Aman', 19], ['Priya', 20]]
+
+---------------------------------------
+    
+students = [
+        ["Rahul",18],
+        ["Aman",19],
+        ["Priya",20]
+    ]
+    print(students[0][0])
+    print(students[1][1])
+    print(students[2][0])
+
+O/P : Rahul
+      19
+      Priya
+
+--------------------------------
+
+    students = [
+        ["Rahul",18],
+        ["Aman",19]
+    ]
+    students[0][1] = 21
+    print(students)
+
+O/P : [['Rahul',21],['Aman',19]]
+
+----------------------------------
+
+    students = [
+        ["Rahul",18],
+        ["Aman",19]
+    ]
+    students.append(["Priya",20])
+    print(students)
+
+O/P : [['Rahul',18],['Aman',19],['Priya',20]]
+
+-------------------------------------------
+
+students = [
+    ["Rahul",18],
+    ["Aman",19],
+    ["Priya",20]
+]
+students.pop(1)
+print(students)
+
+O/P : [['Rahul',18],['Priya',20]]
+
+--------------------------------------------
+
+students = [
+    [101, "Rahul", 85],
+    [102, "Aman", 90],
+    [103, "Priya", 88]
+]
+
+for student in students:
+    print(
+        "Roll No:", student[0],
+        "Name:", student[1],
+        "Marks:", student[2]
+    )
+
+O/P : 
+Roll No: 101 Name: Rahul Marks: 85
+Roll No: 102 Name: Aman Marks: 90
+Roll No: 103 Name: Priya Marks: 88
+
+----------------------------------------------
+
+    matrix = [
+        [10,20,30],
+        [40,50,60],
+        [70,80,90]
+    ]
+    print(matrix[2][1])
+
+O/P : 80
+
+----------------------------------------------
+
+marks = [
+    ["Rahul",85,90,88],
+    ["Aman",80,70,75],
+    ["Priya",95,92,90]
+]
+for student in marks:
+    total = student[1] + student[2] + student[3]
+    print(student[0], total)
+
+O/P : Rahul 263
+      Aman 225
+      Priya 277
+
+👉 Organizes grouped data.
+👉 Easy to represent tables.
+👉 Useful for matrices.
+👉 Supports multi-dimensional data.
+👉 Easy to iterate using nested loops.
+
+-----------
+| Summary |
+-----------
+__________________________________________________________________
+| Topic                | Description                             |
+| -------------------- | --------------------------------------- |
+| Nested List          | List inside another list                |
+| Outer Index          | Selects the inner list                  |
+| Inner Index          | Selects an element from the inner list  |
+| Multi-Level Indexing | Uses multiple indexes like `list[i][j]` |
+| Traversal            | Done using nested `for` loops           |
+| Common Uses          | Tables, Matrices, Student Records       |
+------------------------------------------------------------------
+
+
+
+
