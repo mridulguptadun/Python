@@ -20,41 +20,323 @@ _______________________________________________
 | Generator Expression     | Generator Object |
 -----------------------------------------------
 
-  [expression for item in iterable]
-  
-  [expression for item in iterable if condition]
+======================
+| List Comprehension |
+======================
+👉 List Comprehension is a concise way to create a new list by applying an expression to each item of an iterable, 
+    with an optional condition.
 
-  Iterable
-      ↓
-  Take one item
-      ↓
-  Check condition (if present)
-      ↓
-  Apply expression
-      ↓
-  Store result
-      ↓
-  Repeat
+new_list = [expression for item in iterable]
+new_list = [expression for item in iterable if condition]
+
+Iterable
+   │
+   ▼
+Take One Item
+   │
+   ▼
+Check Condition (Optional)
+   │
+   ▼
+Apply Expression
+   │
+   ▼
+Store in New List
+   │
+   ▼
+Repeat Until Finished
+--------------------------------------------------
+
+    numbers = [1, 2, 3, 4, 5]
+    new_list = [i for i in numbers]
+    print(new_list)
+
+O/P : [1, 2, 3, 4, 5]
+
+    numbers = [1, 2, 3, 4, 5]
+    square = [i ** 2 for i in numbers]
+    print(square)
+
+O/P : [1, 4, 9, 16, 25]
+
+    numbers = [1, 2, 3, 4, 5]
+    cube = [i ** 3 for i in numbers]
+    print(cube)
+
+O/P : [1, 8, 27, 64, 125]
+
+    numbers = [5, 10, 15]
+    result = [i + 10 for i in numbers]
+    print(result)
+
+O/P : [15, 20, 25]
+
+    numbers = [1,2,3,4,5,6,7,8,9,10]
+    even = [i for i in numbers if i % 2 == 0]
+    print(even)
+
+O/P : [2, 4, 6, 8, 10]
+
+    numbers = [1,2,3,4,5,6]
+    square = [i ** 2 for i in numbers if i % 2 == 0]
+    print(square)
+
+O/P : [4, 16, 36]
+
+    square = [i ** 2 for i in range(1, 6)]
+    print(square)
+
+O/P : [1, 4, 9, 16, 25]
+
+    word = "python"
+    result = [ch.upper() for ch in word]
+    print(result)
+
+O/P : ['P', 'Y', 'T', 'H', 'O', 'N']
+
+👉 Creates a list in a single line.
+👉 Improves code readability.
+👉 Reduces the use of append().
+👉 Often performs better than a traditional loop.
+👉 Makes code more Pythonic.
+👉 Not suitable for very complex logic.
+👉 Deeply nested comprehensions reduce readability.
+👉 Avoid using it when multiple statements are required.
+
+============================
+| Dictionary Comprehension |
+============================
+👉 Dictionary Comprehension is a concise way to create a new dictionary by generating key-value pairs from an  
+   iterable using a single line of code.
+
+new_dict = {key_expression: value_expression for item in iterable}
+new_dict = {key_expression: value_expression for item in iterable if condition}
+
+Iterable
+   │
+   ▼
+Take One Item
+   │
+   ▼
+Check Condition (Optional)
+   │
+   ▼
+Create Key
+   │
+   ▼
+Create Value
+   │
+   ▼
+Store Key : Value
+--------------------------------------------------------------
+    
+    square = {i: i ** 2 for i in range(1, 6)}
+    print(square)
+
+O/P : {
+    1:1,
+    2:4,
+    3:9,
+    4:16,
+    5:25
+}
+
+    even_square = {i: i ** 2 for i in range(1, 11) if i % 2 == 0}
+    print(even_square)
+
+O/P : {
+    2:4,
+    4:16,
+    6:36,
+    8:64,
+    10:100
+}
+
+    words = ["apple", "banana", "cat", "python"]
+    length = {word: len(word) for word in words}
+    print(length)
+
+O/P : {
+    'apple':5,
+    'banana':6,
+    'cat':3,
+    'python':6
+}
+
+    marks = {
+        "Ram":80,
+        "Shyam":65,
+        "Mohan":90
+    }
+    new_marks = {k: v + 5 for k, v in marks.items()}
+    print(new_marks)
+
+O/P : {
+    'Ram':85,
+    'Shyam':70,
+    'Mohan':95
+}
+
+    passed = {k: v for k, v in marks.items() if v > 70}
+    print(passed)
+
+O/P : {
+    'Ram':80,
+    'Mohan':90
+}
+
+👉 Creates dictionaries in a single line.
+👉 Cleaner and more readable code.
+👉 Reduces boilerplate code.
+👉 Supports filtering using if.
+👉 More Pythonic than traditional loops.
+👉 Not suitable for very complex logic.
+👉 Nested comprehensions may reduce readability.
+👉 Duplicate keys overwrite previous values.
+
+=====================
+| Set Comprehension |
+=====================
+👉 Set Comprehension is a concise way to create a new set by applying an expression to each item of an iterable, 
+   with an optional condition.
+
+new_set = {expression for item in iterable}
+new_set = {expression for item in iterable if condition}
+
+Iterable
+   │
+   ▼
+Take One Item
+   │
+   ▼
+Check Condition (Optional)
+   │
+   ▼
+Apply Expression
+   │
+   ▼
+Store in Set
+   │
+   ▼
+Duplicate?
+   │
+ Yes ───► Ignore
+   │
+ No
+   │
+   ▼
+Repeat
+-----------------------------------------------
+    numbers = {i for i in range(1, 6)}
+    print(numbers)
+
+O/P : {1, 2, 3, 4, 5}
+
+    even = {i for i in range(1, 11) if i % 2 == 0}
+    print(even)
+
+O/P :{2, 4, 6, 8, 10}
+
+    word = "programming"
+    letters = {ch for ch in word}
+    print(letters)
+
+O/P : {'p', 'r', 'o', 'g', 'a', 'm', 'i', 'n'}
+
+👉 Creates sets in a single line.
+👉 Automatically removes duplicate values.
+👉 Cleaner and shorter than loops.
+👉 Supports filtering with if.
+👉 More Pythonic.
+👉 Elements are unordered.
+👉 Duplicate values cannot be stored.
+👉 Not suitable for complex logic.
+👉 Nested comprehensions may reduce readability.
+
+========================
+| Generator Expression |
+========================
+👉 A Generator Expression is a concise way to create a generator object that produces values one at a time instead of 
+   storing all values in memory at once.
+
+generator = (expression for item in iterable)
+
+    numbers = (i for i in range(1, 6))
+    print(numbers)
+
+O/P : <generator object <genexpr> at 0x...>   # return generator object 
+
+    numbers = (i for i in range(1, 6))
+    for i in numbers:
+        print(i)
+
+O/P : 1
+      2
+      3
+      4
+      5
+
+Using next()
+--------------
+    numbers = (i for i in range(1, 6))
+    print(next(numbers))
+    print(next(numbers))
+    print(next(numbers))
+-------------------------------------------------------------
+    square = (i ** 2 for i in range(1, 6))
+    for i in square:
+        print(i)
+
+O/P :
+1
+4
+9
+16
+25
+
+    letters = (ch.upper() for ch in "python")
+    for i in letters:
+        print(i)
+
+O/P : 
+P
+Y
+T
+H
+O
+N
+
+👉 Memory efficient.
+👉 Generates values on demand.
+👉 Suitable for large datasets.
+👉 Cleaner syntax.
+👉 Supports lazy evaluation.
+👉 Can be iterated only once.
+👉 Does not support indexing.
+👉 Does not have methods like append() or sort().
+
+--------------------
+| Important Points |
+--------------------
+👉 List Comprehension → Creates a new list.
+👉 Dictionary Comprehension → Creates key-value pairs.
+👉 Set Comprehension → Creates a set with unique values.
+👉 Generator Expression → Creates a generator object using lazy evaluation.
+👉 Use List Comprehension for small to medium datasets when you need all values at once.
+👉 Use Generator Expression for very large datasets to save memory.
+👉 next() retrieves the next value from a generator.
+👉 A generator can be consumed only once.
+
+-----------
+| Summary |
+-----------
+________________________________________________________________
+| Type                     | Brackets       | Returns          |
+| ------------------------ | -------------- | ---------------- |
+| List Comprehension       | `[]`           | List             |
+| Dictionary Comprehension | `{key: value}` | Dictionary       |
+| Set Comprehension        | `{}`           | Set              |
+| Generator Expression     | `()`           | Generator Object |
+----------------------------------------------------------------
 
 
-  numbers = [1,2,3,4,5]
-  result = [i+10 for i in numbers]
-  print(result)
-
-O/P : [11,12,13,14,15]
-
-------------------------------------------------
-
-  numbers = [1,2,3,4,5,6,7,8]
-  even = [i for i in numbers if i % 2 == 0]
-  print(even)
-
-O/P : [2,4,6,8]
-
-------------------------------------------------
-
-  numbers = [1,2,3,4,5,6]
-  square = [i*i for i in numbers if i%2==0]
-  print(square)
-
-O/P : [4,16,36]
